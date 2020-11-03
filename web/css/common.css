@@ -1,0 +1,307 @@
+/*body　白(#ffffff)*/
+BODY {
+	background-color:#ffffff;
+	color : #000000;
+	margin: auto;
+	text-align : center;
+	width:750px; /* タイトル部の横幅 */
+}
+
+/*body　白(#ffffff)*/
+.BODYcallcenter {
+        background:none;
+	background-color:#ffffff;
+	margin: auto;
+	text-align : center;
+	width:500px; /* タイトル部の横幅 */
+        color: #A9A9A9;
+}
+
+/*ヘッダーロゴ*/
+div#title_header {
+ display:block;
+ margin: auto; /*センタリングする場合 */
+ height:75px; /* タイトルの高さ */
+ width:750px; /* タイトル部の横幅 */
+ background:url(../image/header.gif);/*画像URL(相対位置の場合、CSSファイルからの位置)*/
+ background-repeat:no-repeat; /* リピートさせない場合 */
+ text-align:center;
+ vertical-align:bottom;
+ }
+
+/*詳細部*/
+div#container {
+	display:block;
+	color : #000000;
+	margin: auto; /*センタリングする場合 */
+	width:750px; /* タイトル部の横幅 */
+	text-align:center;
+	background-color:#ffffff;
+ }
+ 
+/*メニュー申込の流れ*/
+.guideWhite {
+    margin: auto; /*センタリングする場合 */
+    width:630px; /* タイトル部の横幅 */
+    text-align:left;
+    font-size:14px;
+ }
+
+/*テーブル左寄り解消（firefox対応）*/
+TABLE {
+	margin: auto;
+}
+
+/*TD　黒(#000000)*/
+TD {
+	font-size:14px;
+	text-align:left;
+	color:#000000;
+	line-height: 1.2;
+}
+
+/*TH　黒(#000000)*/
+TH {
+	font-size:14px;
+	text-align:left;
+	color:#000000;
+	line-height: 1.2;
+}
+
+/*リンクの設定*/
+/*リンクされた文字*/
+a {
+	color:#0000ff;
+	font-style:normal;
+	text-decoration:underline;
+}
+
+/*マウスをのせたとき*/
+a:hover {
+	color:#ff0000;
+	font-style:normal;
+	text-decoration:underline;
+}
+
+/*クリック中*/
+a:active {
+	color:#800080;
+	font-style:normal;
+	text-decoration:underline;
+}
+a:visited {
+        color:#800080;
+	font-style:normal;
+	text-decoration:underline;
+}
+
+/*中央寄せ*/
+.TDcenter {
+	text-align : center;
+}
+
+/*右寄せ*/
+.TDright {
+	text-align : right;
+}
+
+/*左寄せ*/
+.TDleft {
+	text-align : left;
+}
+
+/*上寄せ*/
+.TDtop {
+	vertical-align: top;
+}
+
+/*下寄せ*/
+.TDbottom {
+	vertical-align: bottom;
+}
+
+/*中央寄せ*/
+.TDmiddle {
+	vertical-align: middle;
+}
+
+/*ヘッダー、フッターの一括設定　白(#ffffff)*/
+.header,.footer {
+	width:640px;
+	text-align : center;
+	border: 0px solid #ffffff;
+	border-collapse: separate; border-spacing: 0px;
+}
+
+/*タイトルの一括設定*/
+
+
+/*？？？？？*/
+.ime_off{
+	ime-mode:disabled;
+}
+
+/*？？？？？*/
+.ime_on{
+	ime-mode:active;
+}
+
+.title {
+	width:640px;
+	text-align : center;
+	border: 1px solid #c0c0c0;
+	border-collapse: collapse; border-spacing: 0px;
+}
+
+/*？？？？？　水色(#6495ed)*/
+.title td.left {
+	border: 1px solid #191970;  
+	background-color: #191970;
+	width:5px;
+}
+
+/*？？？？？　紺色(#003366)*/
+.title td.right {
+	color : #003366;
+	font-size: 23px;
+}
+
+/*基本テーブル*/
+.table1 {
+	width: 640px; border-collapse: collapse;
+}
+
+.tdMidashiGray {
+    border: 1px solid #EEEEEE;
+    border-collapse:collapse; /*影無し*/
+    width:40%;
+    background-color: #EEEEEE;
+    vertical-align: middle;
+    text-align:center;
+}
+
+.titleShiken {
+    width:320px;
+    text-align : left;
+    border-spacing: 0px;
+} 
+
+.titleShiken td.titleLeft {
+    background-color: #95eaea;
+    border-bottom:2px solid #c0c0c0;
+    width:5px;
+} 
+
+.titleShiken td.titleRight {
+    color : #000000;
+    background-color: #ffffff;
+    border-bottom:2px solid #c0c0c0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/**注意書きフォント*/
+.txtAttention{ color: #ff1100; }
+
+/**メッセージフォント*/
+.txtMessage{ 
+    color : #003366;
+    font-size: 23px;
+}
+
+.tableFee{
+    width:640px;
+    border:2px #808080 solid;
+    border-collapse: separate;
+}
+.tableFee th{
+    background-color: #fff8dc;
+    border-collapse: separate;
+    border:2px #808080 solid;
+    text-align:center;
+    font-weight:normal;
+    height: 30px;
+}
+.tableFee td{
+    border-collapse: separate;
+    border:2px #808080 solid;
+    text-align:right;
+    font-weight:normal;
+    height: 30px;
+}
+/**外枠・内枠表示テーブル*/
+.tableFrameDisp { width:640px; border:1px solid #000000; border-collapse: collapse; }
+.tableFrameDisp th{
+    border:1px solid #000000;
+}
+.tableFrameDisp td{
+    border:1px solid #000000;
+}
+/**外枠のみ表示テーブル*/
+.tableOutFrameDisp { width:640px; border:1px solid #000000; border-collapse: collapse; }
+.tableOutFrameDisp th{
+    border:none;
+}
+.tableOutFrameDisp td{
+    border:none;
+}
+/**外枠グレーのみ表示テーブル550*/
+.tableOutFrameGrayDisp550 { width:550px; border:1px solid #808080; border-collapse: collapse; }
+.tableOutFrameGrayDisp550 th{
+    border:none;
+}
+.tableOutFrameGrayDisp550 td{
+    border-right: 1px solid #808080;
+}
+
+/**外枠グレーのみ表示テーブル640*/
+.tableOutFrameGrayDisp { width:640px; border:1px solid #808080; border-collapse: collapse; }
+.tableOutFrameGrayDisp th{
+    border:none;
+}
+.tableOutFrameGrayDisp td{
+    border-right: 1px solid #808080;
+}
+/*枠線無し_640px*/
+.tableNoFrame {border: 0px solid #ffffff;}
+.tableNoFrame th{
+    border:none;
+}
+.tableNoFrame td{
+    border:none;
+}
+
+/*枠線無し_640px_文字左揃え*/
+.tableNoFrameLeft {
+    width:640px;
+}
+
+/**外枠グレー表示フレーム*/
+.iframeCall { 
+    width:500px;
+    height: 150px;
+    border:1px solid #808080;
+    border-collapse:collapse;
+}
+
+/**グレーライン*/
+.lineGray { 
+    width:650px;
+    border: 0.5px #808080 solid;
+}
+
+/*フォントグレー**/
+.gray {
+	color: #808080;
+}
+
+/*フォントブルーー**/
+.blue {
+	color: #0000FF;
+}
+
+/*フォント赤**/
+.font13red { color: #ff1100; font-size:13px; font-weight: 600;}
+
+/*キャンセルボタン**/
+.buttonCancel { height: 30px; font-size: 14px; font-weight: bolder; color: #FF0000;}

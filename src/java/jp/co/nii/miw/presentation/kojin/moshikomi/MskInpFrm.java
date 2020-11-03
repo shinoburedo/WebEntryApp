@@ -1,0 +1,93 @@
+package jp.co.nii.miw.presentation.kojin.moshikomi;
+
+import jp.co.nii.miw.business.MiwConstants;
+import jp.co.nii.miw.business.service.moshikomi.MskToroku;
+import jp.co.nii.miw.business.service.moshikomi.MskTorokuServ;
+
+import java.util.List;
+import java.util.LinkedList;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts.util.LabelValueBean;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.DynaActionForm;
+
+
+/**
+ * <p>
+ * タイトル:JznInpFrm
+ * </p>
+ * <p>
+ * 説明:MskInpのフォームクラス
+ * </p>
+ * <p>
+ * 著作権: Copyright (c) 2011
+ * </p>
+ * <p>
+ * 会社名: 日本情報産業株式会社
+ * </p>
+ *
+ * @author --t.yamaguchi
+ */
+public class MskInpFrm extends DynaActionForm {
+
+    /**
+     * セレクトボックス選択値をセットするのをここでやる
+     * @param ActionMapping
+     * @param HttpServletRequest
+     */
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        
+        //セッション開始
+        HttpSession session = request.getSession(false);
+        //エンティティの内容を取得
+        MskToroku mskTorokuJoho = (MskToroku) session.getAttribute("MskTorokuJoho");
+        String nendo = mskTorokuJoho.getNendo().toString();
+        String kaisu = mskTorokuJoho.getKaisu().toString();
+        
+        List eventCodeList = new LinkedList();
+        List shikenchiList = new LinkedList();
+        List birthEraList = new LinkedList();
+        List todofukenList = new LinkedList();
+        List passwdQuestionList = new LinkedList();
+        
+        //受験科目
+        for (int i = 0; i < MiwConstants.DISP_JUKEN_KAMOKU.length; i++) {
+            eventCodeList.add(new LabelValueBean(MiwConstants.DISP_JUKEN_KAMOKU[i][1], MiwConstants.DISP_JUKEN_KAMOKU[i][0]));
+        }
+        
+        //受験地リスト作成
+        MskTorokuServ mskTorokuServ = new MskTorokuServ();
+        shikenchiList = mskTorokuServ.selectShikenchi(nendo, kaisu);
+        
+        //生年月日年号
+        birthEraList.add(new LabelValueBean("お選びください", ""));
+        for (int i = 0; i < MiwConstants.DISP_BIRTHDAY_ERA_COD.length; i++) {
+            birthEraList.add(new LabelValueBean(MiwConstants.DISP_BIRTHDAY_ERA_COD[i][1], MiwConstants.DISP_BIRTHDAY_ERA_COD[i][0]));
+        }
+        
+        //都道府県
+        todofukenList.add(new LabelValueBean("お選びください", ""));
+        for (int i = 0; i < MiwConstants.DISP_TODOFUKEN_CODE.length; i++) {
+            todofukenList.add(new LabelValueBean(MiwConstants.DISP_TODOFUKEN_CODE[i][1], MiwConstants.DISP_TODOFUKEN_CODE[i][0]));
+        }
+        
+        //ご本人様確認用の質問
+        passwdQuestionList.add(new LabelValueBean("お選びください", ""));
+        for (int i = 0; i < MiwConstants.DISP_PASSWD_QUESTION_COD.length; i++) {
+            passwdQuestionList.add(new LabelValueBean(MiwConstants.DISP_PASSWD_QUESTION_COD[i][1], MiwConstants.DISP_PASSWD_QUESTION_COD[i][0]));
+        }
+        
+        //sessionに保存
+        request.setAttribute("EventCodeList", eventCodeList);
+        request.setAttribute("ShikenchiList", shikenchiList);
+        request.setAttribute("BirthEraList", birthEraList);
+        request.setAttribute("TodofukenList",todofukenList);
+        request.setAttribute("PasswdQuestionList", passwdQuestionList);
+        
+        
+    }
+}

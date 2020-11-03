@@ -1,0 +1,3 @@
+nendo	shiken_shubetsu_code	user_id	passwd	shimei_sei_kana	shimei_mei_kana	shimei_sei	shimei_mei	tel_no	birthday	mail_address	passwd_question_code_1	passwd_question_code_2	passwd_answer_1	passwd_answer_2	ronri_sakujo_flg	shori_kbn	toroku_date	toroku_time	toroku_user_id	koshin_date	koshin_time	koshin_user_id
+2011	01	00000092	ikezawa	イケザワ	ナオミ	池澤	直美	080-1111-1111	19811109	n-ikezawa@test-sys.net	01	02	あ	い	0	I	20111101	175531	00000085	20111101	175531	00000085
+2011	01	00000093	ikezawa	イケザワ	ナオミ	池澤	直美	080-1111-1111	19811109	n-ikezawa@test-sys.net	01	02	あ	い	0	I	20111101	175531	00000085	20111101	175531	00000085

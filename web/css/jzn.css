@@ -1,0 +1,58 @@
+/**見出し*/
+.headline{color : #003366;font-size: 18px;}
+/**小見出し*/
+.subHeadline { font-size: 16px; font-weight: bold; color: #003366;}
+/*基本テーブル*/
+.table1 {
+	width: 640px; border-collapse: collapse;
+}
+/**外枠表示テーブル*/
+.table2 { width:640px; border:1px solid #000000; border-collapse:collapse;}
+
+/*注意書きのフォント**/
+.txtAttention {
+	color: #ff1100;
+}
+
+/**メインテーブル*/
+.tableMain {
+	width:640px; border-collapse: collapse;
+}
+
+/**？？？？？*/
+.tableMain th {
+	background-color: #c2e2e1;
+	border-collapse: collapse;
+	border:1px solid #003366;
+	color: #000000;
+	font-weight: 600;
+	padding-left: 10px;
+}
+
+/**？？？？？*/
+.tableMain td.basic {
+	background-color: #f0f0f0;
+	border-collapse: collapse;
+	border:1px solid #003366;
+	color: #000000;
+	padding-left: 10px;
+}
+
+/**？？？？？*/
+.tableMain td.err
+	{background-color: #ff5555;
+	border-collapse: collapse;
+	border:1px solid #003366;
+	color: #000000;
+	padding-left: 10px;
+}
+
+/**次画面への遷移ボタン*/
+.buttonNext { height: 30px; font-size: 14px; background-color: #FFD700; border: 2px solid #6699CC; color: #A0522D;}
+
+.buttonNext:hover {  
+    height: 30px; font-size: 14px; background-color: #FF8C00; border: 2px solid #FF0000; color: #FFFFFF;
+}  
+.buttonNext:active, .buttonNext:next .buttonNext:input {
+    height: 30px; font-size: 14px; background-color: #A9A9A9; border: 2px solid #FFFFFF; color: #000000;  
+}  

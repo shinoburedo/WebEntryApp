@@ -1,0 +1,205 @@
+/*ヘッダーロゴ*/
+div#title_header_mgr {
+ display:block;
+ margin: auto; /*センタリングする場合 */
+ height:75px; /* タイトルの高さ */
+ width:750px; /* タイトル部の横幅 */
+ background:url(../image/header_mgr.gif);/*画像URL(相対位置の場合、CSSファイルからの位置)*/
+ background-repeat:no-repeat; /* リピートさせない場合 */
+ text-align:center;
+ vertical-align:bottom;
+ }
+
+/**ウォーターマーク**/
+.updnWatermark {
+    color: #c9c9c9;
+    font-family: Sans-Serif;
+    font-style: italic;
+    padding: 2px;
+    white-space: nowrap;}
+
+
+/*画面タイトルの一括設定*/
+.title {
+	width:640px;
+	text-align : center;
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse; border-spacing: 0px;
+}
+.title td.left {
+	background-color: #004795;
+	width:5px;
+}
+.title td.right {
+	color : #000000;
+	font-size: 23px;
+}
+
+
+/*試験タイトルの一括設定*/
+.titleShiken {
+    width:320px;
+    text-align : left;
+    border-spacing: 0px;
+}
+.titleShiken td.left {
+    background-color: #95eaea;
+    border-bottom:2px solid #c0c0c0;
+    width:5px;
+
+}
+.titleShiken td.right {
+    color : #000000;
+    background-color: #ffffff;
+    border-bottom:2px solid #c0c0c0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/**説明を表示するBOX*/
+.tableExBox {width:640px; border:1px solid #c9c9c9; background-color:#fff4f4;  border-collapse:collapse;}
+/**外枠表示テーブル*/
+.tableFrameDisp {width:640px; border:1px solid #000000; }
+/**枠無しテーブル*/
+.tableNoFrame{ width:640px; border-collapse:collapse;}
+.tableNoFrameEx{ width:660px;}
+
+/**検索ページのテーブル*/
+.tableSearch{width: 640px; border-collapse: collapse;}
+.tableSearch th{text-align: left;
+                background-color: #dceaf8;
+                border:1px solid #f4f4f4;
+                color: #000000;
+                font-weight: 600;
+                padding-top: 4px;
+                padding-left: 10px;
+                padding-right: 4px;
+                padding-bottom: 4px;
+}
+.tableSearch td.basic {
+    background-color: #fdf9f4;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.tableSearch td.err {
+    background-color: #ff5555;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+
+/**検索結果ページのテーブル*/
+.tableResu{width: 640px; border-collapse: collapse;}
+.tableResu th{
+    background-color: #dceaf8;
+    border:1px solid #000000;
+    color: #000000;
+    font-weight: 600;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.tableResu td.noFrame {
+    border-left:1px solid #ffffff;
+    border-right:1px solid #ffffff;
+    border-top:1px solid #ffffff;
+    padding: 0;
+
+}
+.tableResu td.basic1 {
+    background-color: #fdf9f4;
+    border:1px solid #000000;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.tableResu td.basic2 {
+    background-color: #ffffff;
+    border:1px solid #000000;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.tableResu td.cancel {
+    background-color: #dcdcdc;
+    border:1px solid #000000;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.tableResu td.row1 {
+    border-collapse: collapse;
+    border-left:1px solid #000000;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-bottom:  1px solid #bfbfbf;
+}
+.tableResu td.row2 {
+    border-collapse: collapse;
+    border-left:1px solid #000000;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #bfbfbf;
+    border-bottom:  1px solid #000000;
+}
+
+.tableMain{width: 640px;  border-collapse: collapse;}
+.tableMain th{
+    text-align: left;
+    background-color: #e9e9e9;
+    border-collapse: collapse;
+    border:1px solid #c0c0c0;
+    color: #000000;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.tableMain td.basic {
+    background-color: #f9f9f9;
+    border-collapse: collapse;
+    border:1px solid #c0c0c0;
+    color: #000000;
+    padding-left: 10px;
+}
+.tableMain td.err {
+    border:1px solid #c0c0c0;
+    background-color: #ff5555;
+    padding-left: 10px;
+}
+.tableMain th.pink{
+    text-align: left;
+    background-color: #FFA07A;
+    border-collapse: collapse;
+    border:1px solid #c0c0c0;
+    color: #000000;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/**通知書きテーブル*/
+.tableNotice{ width:640px; border-collapse:collapse;}
+.tableNotice font.txtNotice{ color: #FF6600; font-weight: 700;}
+.tableNotice td.bgNotice{background-color: #ff9966}
+
+.buttonMenu {width: 300px; height: 30px; }
+.buttonNext { height: 30px; font-size: 14px; }
+
+/**見出し*/
+.headline{color : #000000; font-size: 18px; font-weight: 600;}
+/**注意書きフォント*/
+.txtAttention{ color: #ff1100; }
+
+/**小見出し*/
+.subHeadline { font-size: 12px; font-weight: bold; color: #003366;}

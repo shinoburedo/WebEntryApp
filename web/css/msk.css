@@ -1,0 +1,60 @@
+/**見出し*/
+.headline{color : #003366;font-size: 18px;}
+/**小見出し*/
+.subHeadline { font-size: 16px; font-weight: bold; color: #003366;}
+/**注意書きフォント*/
+.txtAttention{ color: #ff1100; }
+/**通知書きフォント*/
+.txtNotice{ color: #FF6600;}
+/**通知書き背景*/
+.bgNotice{background-color: #ff9966}
+.font6 { color: #0000ff; font-size:13px; font-weight: 600;}
+
+/**基本テーブル(幅を合わせる)*/
+.table1{width: 640px; border-collapse: collapse;}
+/**外枠表示テーブル*/
+.table2 { width:640px; border:1px solid #000000; border-collapse:collapse;}
+/*枠線赤*/
+.table3 { width:640px; border:1px solid #ff1100;}
+.td2 { text-align:center; }
+.td3 { text-align:right; }
+.td6 { vertical-align:top; }
+
+/**メインテーブル*/
+.tableMain{width: 640px; border-collapse: collapse;}
+.tableMain th{background-color: #c2e2e1;
+              border-collapse: collapse;
+              border:1px solid #003366;
+              color: #000000;
+              font-weight: 600;
+              padding-left: 10px;
+}
+.tableMain td.basic{background-color: #f0f0f0;
+                    border-collapse: collapse;
+                    border:1px solid #003366;
+                    color: #000000;
+                    padding-left: 10px;
+}
+.tableMain td.err{background-color: #ff5555;
+                  border-collapse: collapse;
+                  border:1px solid #003366;
+                  color: #000000;
+                  padding-left: 10px;
+}
+
+/**ログインページのテーブル*/
+.tableLogin{width: 450px;}
+.tableLogin th{text-align: left;
+               background-color: #c2e2e1;
+               border:1px solid #ffffff;
+               color: #000000;
+               font-weight: 600;
+               padding-left: 10px;
+}
+.tableLogin input{width: 165px;}
+
+/**支払情報を表示するテーブル*/
+.tablePayJoho { width:640px; border: 1px solid #ffccff; border-collapse: separate; border-spacing: 1px;}
+
+/**次画面への遷移ボタン*/
+.buttonNext { height: 30px; font-size: 14px; }

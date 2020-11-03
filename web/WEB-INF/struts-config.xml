@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <!--画面遷移のみのページで使用 ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean name="NullFrm" type="org.apache.struts.action.DynaActionForm" />
+    
+	<!--Jzn ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean name="JznInpFrm" type="jp.co.nii.miw.presentation.kojin.moshikomi.JznInpFrm">
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiRomaji" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiRomaji" type="java.lang.String" initial=""/>
+            <form-property name="sexCode" type="java.lang.String" initial=""/>
+            <form-property name="birthdayEra" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYear" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMonth" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDay" type="java.lang.String" initial=""/>
+            <form-property name="telNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="mailAddress" type="java.lang.String" initial=""/>
+            <form-property name="mailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="passwd" type="java.lang.String" initial=""/>
+            <form-property name="passwdKakunin" type="java.lang.String" initial=""/>
+        </form-bean>
+
+	<!--Msk ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean
+        name="MskLoginFrm"
+        type="jp.co.nii.miw.presentation.kojin.moshikomi.MskLoginFrm">
+            <form-property name="userId" type="java.lang.String" initial=""/>
+            <form-property name="passwd" type="java.lang.String" initial=""/>
+        </form-bean>
+
+        <form-bean name="MskInpFrm" type="jp.co.nii.miw.presentation.kojin.moshikomi.MskInpFrm">
+            <form-property name="scrollTop" type="java.lang.String" initial=""/>
+            <form-property name="yubinFlg" type="java.lang.String" initial=""/>
+            <form-property name="dantaiFlg" type="java.lang.String" initial=""/>
+            <form-property name="chimeiFlg" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiKbn" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiDantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="eventCode" type="java.lang.String" initial=""/>
+            <form-property name="shikenchiCode" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="sexCode" type="java.lang.String" initial=""/>
+            <form-property name="birthdayEra" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYy" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMm" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDd" type="java.lang.String" initial=""/>
+            <form-property name="kaigaiJushoFlg" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="todofuken" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="telNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="cellphoneNo" type="java.lang.String" initial=""/>
+            <form-property name="mailAddress" type="java.lang.String" initial=""/>
+            <form-property name="mailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="jukoKeiken" type="java.lang.String" initial=""/>
+            <form-property name="jitsumuKeiken" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+        </form-bean>
+        
+        <form-bean name="MskPicFrm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="photoFile" type="org.apache.struts.upload.FormFile" />
+        </form-bean>
+
+        <form-bean name="MskPaySelFrm" type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPaySelFrm" >
+            <form-property name="kessaiHohoKbn" type="java.lang.String"/>
+        </form-bean>
+
+        <form-bean name="MskPayCrdFrm" type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCrdFrm" >
+            <form-property name="expYy" type="java.lang.String" initial=""/>
+            <form-property name="expMm" type="java.lang.String" initial=""/>
+            <form-property name="cardNo1" type="java.lang.String" initial=""/>
+            <form-property name="cardNo2" type="java.lang.String" initial=""/>
+            <form-property name="cardNo3" type="java.lang.String" initial=""/>
+            <form-property name="cardNo4" type="java.lang.String" initial=""/>
+        </form-bean>
+
+        <form-bean name="MskPayCvsFrm" type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCvsFrm" >
+            <form-property name="kessaiConvenienceShubetsu" type="java.lang.String" initial=""/>
+        </form-bean>
+
+	<!--Myp ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean
+			name="MypLoginFrm"
+			type="jp.co.nii.miw.presentation.mypage.MypLoginFrm">
+            <form-property name="userid" type="java.lang.String"/>
+            <form-property name="passwd" type="java.lang.String"/>
+        </form-bean>
+        <form-bean
+                name="MypMskUpdFrm"
+                type="jp.co.nii.miw.presentation.mypage.MypMskUpdFrm">
+            <form-property name="photoFile" type="org.apache.struts.upload.FormFile" />
+            <form-property name="eventCode" type="java.lang.String" initial=""/>
+            <form-property name="kojinDantaiKbn" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiDantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="shikenchiCode" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="sexCode" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYear" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMonth" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDay" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="kaigaiJushoFlg" type="java.lang.String" initial="0"/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="telNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="cellphoneNo" type="java.lang.String" initial=""/>
+            <form-property name="sonotaRenrakusakiTelNo" type="java.lang.String" initial=""/>
+            <form-property name="mailAddress" type="java.lang.String" initial=""/>
+            <form-property name="mailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="jukoKeiken" type="java.lang.String" initial=""/>
+            <form-property name="jitsumuKeiken" type="java.lang.String" initial=""/>
+            <form-property name="oshiraseMailKiboFlg" type="java.lang.String" initial="0"/>
+            <form-property name="shokugyoCode" type="java.lang.String" initial=""/>
+            <form-property name="gakkoName" type="java.lang.String" initial=""/>
+            <form-property name="kinmusakiName" type="java.lang.String" initial=""/>
+            <form-property name="gakkoKbn" type="java.lang.String" initial=""/>
+            <form-property name="gakkoCode" type="java.lang.String" initial=""/>
+            <form-property name="gakunen" type="java.lang.String" initial=""/>
+            <form-property name="shinshoshaHairyoNaiyo" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+            <form-property name="scrollTop" type="java.lang.String"/>
+            <form-property name="yubinKensakuFlg" type="java.lang.String"/>
+            <form-property name="yubinErrKbn" type="java.lang.String"/>
+            <form-property name="yubinOpenFlg" type="java.lang.String"/>
+            <form-property name="dantaiKensakuFlg" type="java.lang.String"/>
+            <form-property name="dantaiErrKbn" type="java.lang.String"/>
+            <form-property name="junkaijoKensakuFlg" type="java.lang.String"/>
+            <form-property name="junkaijoErrKbn" type="java.lang.String"/>
+            <form-property name="todofuken" type="java.lang.String"/>
+            <form-property name="gakkoKensakuFlg" type="java.lang.String"/>
+            <form-property name="gakkoErrKbn" type="java.lang.String"/>
+            <form-property name="gakkoOpenFlg" type="java.lang.String"/>
+            
+            <form-property name="submitButton" type="java.lang.String"/>
+            <form-property name="isMenjoAll" type="java.lang.String"/>
+        </form-bean>
+        <form-bean name="MypMskPicFrm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="photoFile" type="org.apache.struts.upload.FormFile" />
+        </form-bean>
+        <form-bean
+                name="MypPswRemFrm"
+                type="jp.co.nii.miw.presentation.mypage.MypPswRemFrm">
+            <form-property name="userId" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="birthdayEra" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYy" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMm" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDd" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+        </form-bean>
+
+        <!--Dnt ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean name="DntInpFrm" type="jp.co.nii.miw.presentation.dantai.moshikomi.DntInpFrm">
+            <form-property name="scrollTop" type="java.lang.String" initial=""/>
+            <form-property name="yubinFlg" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswd" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswdKakunin" type="java.lang.String" initial=""/>
+            <form-property name="dantaiName" type="java.lang.String" initial=""/>
+            <form-property name="dantaiNameKana" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="todofuken" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaTelNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaFaxNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddress" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuIka" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuShika" type="java.lang.String" initial=""/>
+            <form-property name="hassosakiKbn" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+            <form-property name="dantaiMoshikomiPasswd" type="java.lang.String" initial=""/>
+            <form-property name="dantaiMoshikomiPasswdKakunin" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiMemo" type="java.lang.String" initial=""/>
+            <form-property name="kessaiHohoKbn" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean name="DntMskLoginFrm" type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskLoginFrm">
+            <form-property name="dantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswd" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean name="DntMskInpFrm" type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskInpFrm">
+            <form-property name="scrollTop" type="java.lang.String" initial=""/>
+            <form-property name="yubinFlg" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswd" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswdKakunin" type="java.lang.String" initial=""/>
+            <form-property name="dantaiName" type="java.lang.String" initial=""/>
+            <form-property name="dantaiNameKana" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="todofuken" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaTelNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaFaxNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddress" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuIka" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuShika" type="java.lang.String" initial=""/>
+            <form-property name="hassosakiKbn" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+            <form-property name="dantaiMoshikomiPasswd" type="java.lang.String" initial=""/>
+            <form-property name="dantaiMoshikomiPasswdKakunin" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiMemo" type="java.lang.String" initial=""/>
+            <form-property name="kessaiHohoKbn" type="java.lang.String" initial=""/>
+
+        </form-bean>
+        <form-bean name="DntInfLoginFrm" type="jp.co.nii.miw.presentation.dantai.info.DntInfLoginFrm">
+            <form-property name="dantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="dantaiPasswd" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean name="DntInfUpdInpFrm" type="jp.co.nii.miw.presentation.dantai.info.DntInfUpdInpFrm">
+            <form-property name="scrollTop" type="java.lang.String" initial=""/>
+            <form-property name="yubinFlg" type="java.lang.String" initial=""/>
+            <form-property name="dantaiName" type="java.lang.String" initial=""/>
+            <form-property name="dantaiNameKana" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="todofuken" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaTelNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaFaxNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddress" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaMailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuIka" type="java.lang.String" initial=""/>
+            <form-property name="moshikomishaSuShika" type="java.lang.String" initial=""/>
+            <form-property name="hassosakiKbn" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiMemo" type="java.lang.String" initial=""/>
+            <form-property name="kessaiHohoKbn" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean
+                name="DntPswCngFrm"
+                type="org.apache.struts.action.DynaActionForm">
+            <form-property name="password" type="java.lang.String" initial=""/>
+            <form-property name="passwordNew1" type="java.lang.String" initial=""/>
+            <form-property name="passwordNew2" type="java.lang.String" initial=""/>
+        </form-bean>
+
+        <form-bean
+                name="DntPswRemFrm"
+                type="org.apache.struts.action.DynaActionForm">
+            <form-property name="dantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="dantaiJimuTantoshaShimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+        </form-bean>
+        <!--団体申込////////////////////////////////////////////////////////////////////////////////////-->
+        <form-bean
+        name="MskLoginFrm_D"
+        type="jp.co.nii.miw.presentation.dantai.moshikomi.MskLoginFrm">
+            <form-property name="dantaiMoshikomiUketsukeNo" type="java.lang.String" initial=""/>
+            <form-property name="dantaiMoshikomiPasswd" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean 
+        name="MskInpFrm_D" 
+        type="jp.co.nii.miw.presentation.dantai.moshikomi.MskInpFrm">
+            <form-property name="scrollTop" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiKbn" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiDantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="eventCode" type="java.lang.String" initial=""/>
+            <form-property name="shikenchiCode" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="sexCode" type="java.lang.String" initial=""/>
+            <form-property name="birthdayEra" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYy" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMm" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDd" type="java.lang.String" initial=""/>
+            <form-property name="kaigaiJushoFlg" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="todofuken" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="telNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="cellphoneNo" type="java.lang.String" initial=""/>
+            <form-property name="mailAddress" type="java.lang.String" initial=""/>
+            <form-property name="mailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="jukoKeiken" type="java.lang.String" initial=""/>
+            <form-property name="jitsumuKeiken" type="java.lang.String" initial=""/>
+            <form-property name="passwd" type="java.lang.String" initial=""/>
+            <form-property name="passwdKakunin" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+        </form-bean>
+        <form-bean name="MskPicFrm_D" type="jp.co.nii.miw.presentation.dantai.moshikomi.MskPicSelFrm" >
+            <form-property name="photoFile" type="org.apache.struts.upload.FormFile" />
+        </form-bean>
+        <!-- 団体情報確認 -->
+        <form-bean name="DntInfMskListFrm" type="jp.co.nii.miw.presentation.dantai.info.DntInfMskListFrm" >
+            <form-property name="sortFlg" type="java.lang.String" />
+            <form-property name="sortCode" type="java.lang.String" />
+        </form-bean>
+        <form-bean
+                name="DntInfMskUpdFrm"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskUpdFrm">
+            <form-property name="photoFile" type="org.apache.struts.upload.FormFile" />
+            <form-property name="eventCode" type="java.lang.String" initial=""/>
+            <form-property name="kojinDantaiKbn" type="java.lang.String" initial=""/>
+            <form-property name="moshikomiDantaiCode" type="java.lang.String" initial=""/>
+            <form-property name="shikenchiCode" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMeiKana" type="java.lang.String" initial=""/>
+            <form-property name="shimeiSei" type="java.lang.String" initial=""/>
+            <form-property name="shimeiMei" type="java.lang.String" initial=""/>
+            <form-property name="sexCode" type="java.lang.String" initial=""/>
+            <form-property name="birthdayEra" type="java.lang.String" initial=""/>
+            <form-property name="birthdayYear" type="java.lang.String" initial=""/>
+            <form-property name="birthdayMonth" type="java.lang.String" initial=""/>
+            <form-property name="birthdayDay" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo1" type="java.lang.String" initial=""/>
+            <form-property name="yubinNo2" type="java.lang.String" initial=""/>
+            <form-property name="jusho1" type="java.lang.String" initial=""/>
+            <form-property name="jusho2" type="java.lang.String" initial=""/>
+            <form-property name="jusho3" type="java.lang.String" initial=""/>
+            <form-property name="jusho4" type="java.lang.String" initial=""/>
+            <form-property name="telNo" type="java.lang.String" initial=""/>
+            <form-property name="extNo" type="java.lang.String" initial=""/>
+            <form-property name="cellphoneNo" type="java.lang.String" initial=""/>
+            <form-property name="mailAddress" type="java.lang.String" initial=""/>
+            <form-property name="mailAddressKakunin" type="java.lang.String" initial=""/>
+            <form-property name="jukoKeiken" type="java.lang.String" initial=""/>
+            <form-property name="jitsumuKeiken" type="java.lang.String" initial=""/>
+            <form-property name="passwdQuestionCode1" type="java.lang.String" initial=""/>
+            <form-property name="passwdAnswer1" type="java.lang.String" initial=""/>
+            <form-property name="scrollTop" type="java.lang.String"/>
+            <form-property name="todofuken" type="java.lang.String"/>
+        </form-bean>
+
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        
+    </global-forwards>
+
+    <action-mappings>
+        <!--会場一覧オープン時-->
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/common/KaijoListAct"
+            type="jp.co.nii.miw.presentation.common.KaijoListAct">
+            <forward name="success" path="/jsp/KaijoList.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <!--個人menuオープン時/////-->
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/kojin/MenuAct"
+            type="jp.co.nii.miw.presentation.kojin.MenuAct">
+            <forward name="success" path="/jsp/kojin/Menu.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+	<!--Jzn ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/kojin/Jzn/JznTopAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.JznTopAct">
+            <forward name="success" path="/jsp/kojin/JznAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/kojin/Jzn/JznAgrAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.JznAgrAct">
+            <forward name="success" path="/jsp/kojin/JznInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            name="JznInpFrm"
+            scope="request"
+            path="/kojin/Jzn/JznInpAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.JznInpAct">
+            <forward name="success" path="/jsp/kojin/JznConf.jsp" />
+            <forward name="error" path="/jsp/kojin/JznInp.jsp" />
+            <forward name="back" path="/jsp/kojin/JznAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/kojin/Jzn/JznConfAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.JznConfAct">
+            <forward name="success" path="/jsp/kojin/JznResu.jsp" />
+            <forward name="back" path="/jsp/kojin/JznInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+
+        <!--Msk ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <action
+            input="/html/MskLogin.html"
+            scope="request"
+            path="/kojin/Msk/MskLoginInitAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskLoginInitAct">
+            <forward name="success" path="/jsp/kojin/MskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+            
+        <action
+            input="/jsp/kojin/MskLogIn.jsp"
+            name="MskLoginFrm"
+            scope="request"
+            path="/kojin/Msk/MskLoginAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskLoginAct">
+            <forward name="success" path="/jsp/kojin/MskAgr.jsp" />
+            <forward name="error" path="/jsp/kojin/MskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            input="/jsp/kojin/MskAgr.jsp"
+            name="NullFrm"
+            scope="request"
+            path="/kojin/Msk/MskAgrAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskAgrAct">
+            <forward name="success" path="/jsp/kojin/MskInp.jsp" />
+            <forward name="back" path="/jsp/kojin/MskLogin.jsp" />
+            <forward name="error" path="/jsp/kojin/MskAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            input="/jsp/kojin/MskInp.jsp"
+            name="MskInpFrm"
+            scope="request"
+            path="/kojin/Msk/MskInpAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskInpAct">
+            <forward name="success" path="/jsp/kojin/MskConf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="reload" path="/jsp/kojin/MskInp.jsp" />
+            <forward name="error" path="/jsp/kojin/MskInp.jsp" />
+            <forward name="back" path="/jsp/kojin/MskAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            input="/jsp/kojin/MskConf.jsp"
+            name="MskInpFrm"
+            scope="request"
+            path="/kojin/Msk/MskConfAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskConfAct">
+            <forward name="success" path="/jsp/kojin/MskPicSel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="back" path="/jsp/kojin/MskInp.jsp" />
+            <forward name="error" path="/html/sys_err.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+                input="/jsp/kojin/MskPicSel.jsp"
+                name="MskPicFrm"
+                scope="request"
+                path="/kojin/Msk/MskPicSelAct"
+                type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPicSelAct">
+            <forward name="success" path="/jsp/kojin/MskPicConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/kojin/MskPicSel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="back" path="/jsp/kojin/MskConf.jsp" />
+        </action>
+
+        <action
+                input="/jsp/kojin/MskPicConf.jsp"
+                name="MskPicFrm"
+                scope="request"
+                path="/kojin/Msk/MskPicConfAct"
+                type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPicConfAct">
+            <forward name="success" path="/jsp/kojin/MskPaySel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/kojin/MskPicConf.jsp" />
+            <forward name="back" path="/jsp/kojin/MskPicSel.jsp" />
+        </action>
+
+        <action
+            path="/kojin/Msk/MskPictureAction"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPictureAction" />
+
+        <action
+            input="/jsp/kojin/MskPaySel.jsp"
+            name="MskPaySelFrm"
+            scope="request"
+            path="/kojin/Msk/MskPaySelAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPaySelAct">
+            <forward name="card" path="/jsp/kojin/MskPayCrdInp.jsp" />
+            <forward name="conveni" path="/jsp/kojin/MskPayCvsInp.jsp" />
+            <forward name="payeasy" path="/jsp/kojin/MskPayPayeasyConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/kojin/MskPaySel.jsp" />
+            <forward name="back" path="/jsp/kojin/MskPicConf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+
+        <action
+            input="/jsp/kojin/MskPayCrdInp.jsp"
+            name="MskPayCrdFrm"
+            scope="request"
+            path="/kojin/Msk/MskPayCrdInpAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCrdInpAct">
+            <forward name="success" path="/jsp/kojin/MskPayCrdConf.jsp" />
+            <forward name="error" path="/jsp/kojin/MskPayCrdInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back" path="/jsp/kojin/MskPaySel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+
+        <action
+            input="/jsp/kojin/MskPayCrdConf.jsp"
+            name="MskPayCrdFrm"
+            scope="request"
+            path="/kojin/Msk/MskPayCrdConfAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCrdConfAct">
+            <forward name="success" path="/jsp/kojin/MskPayCrdResu.jsp" />
+            <forward name="error" path="/jsp/kojin/MskPayCrdConf.jsp" />
+            <forward name="errorDC" path="/jsp/kojin/MskPayCrdConf.jsp" />
+            <forward name="update_error" path="/jsp/kojin/MskUpdErrCrdResu.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back" path="/jsp/kojin/MskPayCrdInp.jsp" />
+            <forward name="double" path="/html/sys_errdouble.html" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+        
+        <action
+            input="/jsp/kojin/MskPayCvsInp.jsp"
+            name="MskPayCvsFrm"
+            scope="request"
+            path="/kojin/Msk/MskPayCvsInpAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCvsInpAct">
+            <forward name="success" path="/jsp/kojin/MskPayCvsConf.jsp" />
+            <forward name="error" path="/jsp/kojin/MskPayCvsInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back" path="/jsp/kojin/MskPaySel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+
+        <action        
+            input="/jsp/kojin/MskPayCvsConf.jsp"
+            name="MskPayCvsFrm"
+            scope="request"
+            path="/kojin/Msk/MskPayCvsConfAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayCvsConfAct">
+            <forward name="success" path="/jsp/kojin/MskPayCvsResu.jsp" />
+            <forward name="error" path="/jsp/kojin/MskPayCvsConf.jsp" />
+            <forward name="errorDC" path="/jsp/kojin/MskPayCvsConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back" path="/jsp/kojin/MskPayCvsInp.jsp" />
+            <forward name="double" path="/html/sys_errdouble.html" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+ 
+        <action        
+            input="/jsp/kojin/MskPayPayeasyConf.jsp"
+            name="NullFrm"
+            scope="request"
+            path="/kojin/Msk/MskPayPayeasyConfAct"
+            type="jp.co.nii.miw.presentation.kojin.moshikomi.MskPayPayeasyConfAct">
+            <forward name="success" path="/jsp/kojin/MskPayPayeasyResu.jsp" />
+            <forward name="error" path="/jsp/kojin/MskPayPayeasyConf.jsp" />
+            <forward name="errorDC" path="/jsp/kojin/MskPayPayeasyConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back" path="/jsp/kojin/MskPaySel.jsp" />
+            <forward name="double" path="/html/sys_errdouble.html" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+       
+     <!--Kessai ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <action
+                path="/pay/SrvReceiptAct"
+                scope="request"
+                type="jp.co.nii.miw.presentation.payment.SrvReceiptAct">
+            <forward name="success" path="/html/ReturnCode_0.html" />
+            <forward name="exception" path="/html/ReturnCode_1.html" />
+        </action>
+        <action
+                path="/pay/SrvCancelAct"
+                scope="request"
+                type="jp.co.nii.miw.presentation.payment.SrvCancelAct">
+            <forward name="success" path="/html/ReturnCode_0.html" />
+            <forward name="exception" path="/html/ReturnCode_1.html" />
+        </action>
+        
+        
+     <!--Myp ///////////////////////////////////////////////////////////////////////////////////////////-->
+    
+        <action
+            path="/Myp/MypLogin"
+            forward="/jsp/mypage/MypLogin.jsp" />
+
+        <action
+                path="/Myp/MypLoginAct"
+                type="jp.co.nii.miw.presentation.mypage.MypLoginAct"
+                name="MypLoginFrm"
+                scope="request"
+                validate="false"
+                input="/jsp/mypage/MypLogin.jsp">
+            <forward name="success" path="/Myp/MypMskInfInitAct.do" />
+            <forward name="error" path="/jsp/mypage/MypLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            path="/Myp/MypLogoutAct"
+            type="jp.co.nii.miw.presentation.mypage.MypLogoutAct"
+            scope="request"
+            validate="false">
+            <forward name="success" path="/jsp/mypage/MypLogout.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        
+        <action
+                path="/Myp/MypMskInfInitAct"
+                type="jp.co.nii.miw.presentation.mypage.MypMskInfInitAct">
+            <forward name="success" path="/jsp/mypage/MypMskInf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+                path="/Myp/MypMskInfAct"
+                type="jp.co.nii.miw.presentation.mypage.MypMskInfAct"
+                name="NullFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/mypage/MypMskUpdInp.jsp" />
+            <forward name="error" path="/jsp/mypage/MypMskInf.jsp" />
+            <forward name="revise" path="/jsp/mypage/MypMskPicSel.jsp" />
+            <forward name="logout" path="/Myp/MypLogoutAct.do" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+                path="/Myp/MypMskUpdInpAct"
+                type="jp.co.nii.miw.presentation.mypage.MypMskUpdInpAct"
+                name="MypMskUpdFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/mypage/MypMskUpdConf.jsp" />
+            <forward name="error" path="/jsp/mypage/MypMskUpdInp.jsp" />
+            <forward name="back" path="/jsp/mypage/MypMskInf.jsp" />
+            <forward name="logout" path="/Myp/MypLogoutAct.do" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+                path="/Myp/MypMskPicSelAct"
+                type="jp.co.nii.miw.presentation.mypage.MypMskPicSelAct"
+                name="MypMskPicFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/mypage/MypMskUpdConf.jsp" />
+            <forward name="error" path="/jsp/mypage/MypMskPicSel.jsp" />
+            <forward name="back" path="/jsp/mypage/MypMskInf.jsp" />
+            <forward name="logout" path="/Myp/MypLogoutAct.do" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+                path="/Myp/MypMskUpdConfAct"
+                type="jp.co.nii.miw.presentation.mypage.MypMskUpdConfAct"
+                name="NullFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/mypage/MypMskInf.jsp" />
+            <forward name="error" path="/jsp/mypage/MypMskUpdConf.jsp" />
+            <forward name="back" path="/jsp/mypage/MypMskUpdInp.jsp" />
+            <forward name="logout" path="/Myp/MypLogoutAct.do" />
+            <forward name="revise" path="/jsp/mypage/MypMskPicSel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+                path="/Myp/MypPswRemInitAct"
+                forward="/jsp/mypage/MypPswRemInp1.jsp" />
+        <action
+                path="/Myp/MypPswRemInp1Act"
+                type="jp.co.nii.miw.presentation.mypage.MypPswRemInp1Act"
+                name="MypPswRemFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/mypage/MypPswRemInp2.jsp" />
+            <forward name="error" path="/jsp/mypage/MypPswRemInp1.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="kikan" path="/html/sys_errkikan.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/Myp/MypPswRemInp2Act"
+                type="jp.co.nii.miw.presentation.mypage.MypPswRemInp2Act"
+                name="MypPswRemFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/Myp/MypPswRemResu.do" redirect="true" />
+            <forward name="error" path="/jsp/mypage/MypPswRemInp2.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/Myp/MypPswRemResu"
+                forward="/jsp/mypage/MypPswRemResu.jsp" />
+
+     <!--Kanshi ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <action path="/kanshi/KanshiAP" forward="/jsp/kanshi/kanshi.jsp"/>
+        
+        <action
+                path="/kanshi/KanshiDB"
+                type="jp.co.nii.sew.presentation.kanshi.KanshiDbAct"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/kanshi/kanshi.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <!--団体topオープン時/////-->
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/MenuMoshikomishaAct"
+            type="jp.co.nii.miw.presentation.dantai.MenuMoshikomishaAct">
+            <forward name="success" path="/jsp/dantai/MenuMoshikomisha.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <!--団体登録-->
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/MenuDaihyoshaAct"
+            type="jp.co.nii.miw.presentation.dantai.MenuDaihyoshaAct">
+            <forward name="success" path="/jsp/dantai/MenuDaihyosha.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Msk/DntTopAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntTopAct">
+            <forward name="success" path="/jsp/dantai/DntAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Msk/DntAgrAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntAgrAct">
+            <forward name="success" path="/jsp/dantai/DntInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            input="/jsp/dantai/DntInp.jsp"
+            name="DntInpFrm"
+            scope="request"
+            path="/dantai/Msk/DntInpAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntInpAct">
+            <forward name="success" path="/jsp/dantai/DntInpConf.jsp" />
+            <forward name="back" path="/jsp/dantai/DntAgr.jsp" />
+            <forward name="reload" path="/jsp/dantai/DntInp.jsp" />
+            <forward name="error" path="/jsp/dantai/DntInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntInpConf.jsp"
+            name="DntInpFrm"
+            scope="request"
+            path="/dantai/Msk/DntInpConfAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntInpConfAct">
+            <forward name="success" path="/jsp/dantai/DntInpEnd.jsp" />
+            <forward name="back" path="/jsp/dantai/DntInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="session" path="/html/sys_errsession.html"/>
+        </action>
+        
+        <!--団体出願-->
+        <action
+            input="/html/dantai/DantaiMskLogin.html"
+            scope="request"
+            path="/dantai/Msk/DntMskLoginInitAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskLoginInitAct">
+            <forward name="success" path="/jsp/dantai/DntMskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+            
+        <action
+            input="/jsp/dantai/DntMskLogIn.jsp"
+            name="DntMskLoginFrm"
+            scope="request"
+            path="/dantai/Msk/DntMskLoginAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskLoginAct">
+            <forward name="success" path="/jsp/dantai/DntMskAgr.jsp" />
+            <forward name="back" path="/jsp/dantai/DntMskLogin.jsp" />
+            <forward name="error" path="/jsp/dantai/DntMskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Msk/DntMskAgrAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskAgrAct">
+            <forward name="success" path="/jsp/dantai/DntMskInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/html/sys_err.html" />
+        </action>
+        
+        <action
+            input="/jsp/dantai/DntMskInp.jsp"
+            name="DntMskInpFrm"
+            scope="request"
+            path="/dantai/Msk/DntMskInpAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskInpAct">
+            <forward name="success" path="/jsp/dantai/DntMskConf.jsp" />
+            <forward name="back" path="/jsp/dantai/DntMskAgr.jsp" />
+            <forward name="error" path="/jsp/dantai/DntMskInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntMskConf.jsp"
+            name="DntMskInpFrm"
+            scope="request"
+            path="/dantai/Msk/DntMskConfAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.DntMskConfAct">
+            <forward name="success" path="/jsp/dantai/DntMskEnd.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" redirect="true"/>
+            <forward name="back" path="/jsp/dantai/DntMskInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" redirect="true" />
+        </action>
+        <!--団体情報確認-->
+        <action
+            input="/html/dantai/DantaiInfLogin.html"
+            scope="request"
+            path="/dantai/Inf/DntInfLoginInitAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfLoginInitAct">
+            <forward name="success" path="/jsp/dantai/DntInfLogin.jsp" />
+            <forward name="session" path="/html/sys_errkikan.html" redirect="true" />
+            <forward name="exception" path="/html/sys_err.html" redirect="true" />
+        </action>
+            
+        <action
+            input="/jsp/dantai/DntInfLogIn.jsp"
+            name="DntInfLoginFrm"
+            scope="request"
+            path="/dantai/Inf/DntInfLoginAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfLoginAct">
+            <forward name="success" path="/jsp/dantai/DntInfMenu.jsp" />
+            <forward name="error" path="/jsp/dantai/DntInfLogin.jsp" />
+            <forward name="back" path="/jsp/dantai/DntInfLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            path="/dantai/Inf/DntInfMenu"
+            forward="/jsp/dantai/DntInfMenu.jsp" />
+
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Inf/DntInfConfInitAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfConfInitAct">
+            <forward name="success" path="/jsp/dantai/DntInfConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Inf/DntInfConfAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfConfAct">
+            <forward name="success" path="/jsp/dantai/DntInfUpdInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntInfUpdInp.jsp"
+            name="DntInfUpdInpFrm"
+            scope="request"
+            path="/dantai/Inf/DntInfUpdInpAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfUpdInpAct">
+            <forward name="success" path="/jsp/dantai/DntInfUpdConf.jsp" />
+            <forward name="back" path="/dantai/Inf/DntInfConfInitAct.do" />
+            <forward name="error" path="/jsp/dantai/DntInfUpdInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntInfUpdConf.jsp"
+            name="DntInfUpdInpFrm"
+            scope="request"
+            path="/dantai/Inf/DntInfUpdConfAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfUpdConfAct">
+            <forward name="success" path="/jsp/dantai/DntInfUpdEnd.jsp" />
+            <forward name="back" path="/jsp/dantai/DntInfUpdInp.jsp" />
+            <forward name="error" path="/jsp/dantai/DntInfUpdConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="session" path="/html/sys_errsession.html" />
+        </action>
+        <action
+            path="/dantai/Inf/DntInfLogoutAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfLogoutAct">
+            <forward name="success" path="/jsp/dantai/DntInfLogout.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            path="/dantai/Inf/DntInfLogoutAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntInfLogoutAct">
+            <forward name="success" path="/jsp/dantai/DntInfLogout.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntPswCngInp.jsp"
+            path="/dantai/Inf/DntPswCngInpInitAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntPswCngInpInitAct"
+            validate="false">
+            <forward name="success" path="/jsp/dantai/DntPswCngInp.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            name="DntPswCngFrm"
+            scope="request"
+            path="/dantai/Inf/DntPswCngInpAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntPswCngInpAct"
+            validate="false">
+            <forward name="success" path="/jsp/dantai/DntPswCngEnd.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="error" path="/jsp/dantai/DntPswCngInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/DntJknPswCngInp.jsp"
+            path="/dantai/Inf/DntJknPswCngInpInitAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntJknPswCngInpInitAct"
+            validate="false">
+            <forward name="success" path="/jsp/dantai/DntJknPswCngInp.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            name="DntPswCngFrm"
+            scope="request"
+            path="/dantai/Inf/DntJknPswCngInpAct"
+            type="jp.co.nii.miw.presentation.dantai.info.DntJknPswCngInpAct"
+            validate="false">
+            <forward name="success" path="/jsp/dantai/DntJknPswCngEnd.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="error" path="/jsp/dantai/DntJknPswCngInp.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/dantai/Inf/DntPswRemInitAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntPswRemInitAct"
+                name="NullFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/dantai/DntPswRemInp1.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" redirect="true" />
+            <forward name="kikan" path="/html/sys_errkikan.html" redirect="true" />
+            <forward name="exception" path="/html/sys_err.html" redirect="true" />
+        </action>
+        <action
+                path="/dantai/Inf/DntPswRemInp1Act"
+                type="jp.co.nii.miw.presentation.dantai.info.DntPswRemInp1Act"
+                name="DntPswRemFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/dantai/DntPswRemInp2.jsp" />
+            <forward name="error" path="/jsp/dantai/DntPswRemInp1.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" redirect="true" />
+            <forward name="kikan" path="/html/sys_errkikan.html" redirect="true" />
+            <forward name="exception" path="/html/sys_err.html" redirect="true" />
+        </action>
+        <action
+                path="/dantai/Inf/DntPswRemInp2Act"
+                type="jp.co.nii.miw.presentation.dantai.info.DntPswRemInp2Act"
+                name="DntPswRemFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/dantai/Inf/DntPswRemResu.do" redirect="true" />
+            <forward name="error" path="/jsp/dantai/DntPswRemInp2.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" redirect="true" />
+            <forward name="exception" path="/html/sys_err.html" redirect="true" />
+        </action>
+        <action
+        path="/dantai/Inf/DntPswRemResu"
+        forward="/jsp/dantai/DntPswRemResu.jsp" />
+        <action
+            name="NullFrm"
+            scope="request"
+            path="/YubinSelAct"
+            type="jp.co.nii.miw.presentation.common.YubinSelAct">
+            <forward name="success" path="/jsp/YubinSel.jsp" />
+        </action>
+        <!--団体申込-->
+        <action
+            input="/html/dantai/MskLogin.html"
+            name="MskLoginFrm_D"
+            scope="request"
+            path="/dantai/Msk/MskLoginInitAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.MskLoginInitAct">
+            <forward name="success" path="/jsp/dantai/MskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/MskLogIn.jsp"
+            name="MskLoginFrm_D"
+            scope="request"
+            path="/dantai/Msk/MskLoginAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.MskLoginAct">
+            <forward name="success" path="/jsp/dantai/MskAgr.jsp" />
+            <forward name="error" path="/jsp/dantai/MskLogin.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="back_d" path="/dantai/MenuDaihyoshaAct.do" />
+            <forward name="back_m" path="/dantai/MenuMoshikomishaAct.do" />
+        </action>
+        <action
+            input="/jsp/dantai/MskAgr.jsp"
+            name="NullFrm"
+            scope="request"
+            path="/dantai/Msk/MskAgrAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.MskAgrAct">
+            <forward name="success" path="/jsp/dantai/MskInp.jsp" />
+            <forward name="back" path="/jsp/dantai/MskLogin.jsp" />
+            <forward name="error" path="/jsp/dantai/MskAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+            input="/jsp/dantai/MskInp.jsp"
+            name="MskInpFrm_D"
+            scope="request"
+            path="/dantai/Msk/MskInpAct"
+            type="jp.co.nii.miw.presentation.dantai.moshikomi.MskInpAct">
+            <forward name="success" path="/jsp/dantai/MskPicSel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="reload" path="/jsp/dantai/MskInp.jsp" />
+            <forward name="error" path="/jsp/dantai/MskInp.jsp" />
+            <forward name="back" path="/jsp/dantai/MskAgr.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                input="/jsp/dantai/MskPicSel.jsp"
+                name="MskPicFrm_D"
+                scope="request"
+                path="/dantai/Msk/MskPicSelAct"
+                type="jp.co.nii.miw.presentation.dantai.moshikomi.MskPicSelAct">
+            <forward name="success" path="/jsp/dantai/MskPicConf.jsp" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/dantai/MskPicSel.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="back" path="/jsp/dantai/MskInp.jsp" />
+        </action>
+        <action
+                input="/jsp/dantai/MskPicConf.jsp"
+                name="MskPicFrm_D"
+                scope="request"
+                path="/dantai/Msk/MskPicConfAct"
+                type="jp.co.nii.miw.presentation.dantai.moshikomi.MskPicConfAct">
+            <forward name="success" path="/jsp/dantai/MskConf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/dantai/MskPicConf.jsp" />
+            <forward name="back" path="/jsp/dantai/MskPicSel.jsp" />
+        </action>
+        <action
+                input="/jsp/dantai/MskConf.jsp"
+                name="NullFrm"
+                scope="request"
+                path="/dantai/Msk/MskConfAct"
+                type="jp.co.nii.miw.presentation.dantai.moshikomi.MskConfAct">
+            <forward name="success" path="/jsp/dantai/MskEnd.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="double" path="/html/sys_errdouble.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/dantai/MskConf.jsp" />
+            <forward name="back" path="/jsp/dantai/MskInp.jsp" />
+        </action>
+        <action
+        path="/PictureAction"
+        type="jp.co.nii.miw.presentation.common.PictureAction" />
+        <action
+                input="/jsp/dantai/DntInfMskList.jsp"
+                name="DntInfMskListFrm"
+                scope="request"
+                path="/dantai/Inf/DntInfMskListInitAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskListInitAct">
+            <forward name="success" path="/jsp/dantai/DntInfMskList.jsp" />
+            <forward name="session" path="/html/sys_errkikan.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/dantai/DntInfMskList.jsp" />
+        </action>
+        <action
+                input="/jsp/dantai/DntInfMskList.jsp"
+                name="DntInfMskListFrm"
+                scope="request"
+                path="/dantai/Inf/DntInfMskListAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskListAct">
+            <forward name="success" path="/jsp/dantai/DntInfMskList.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+            <forward name="error" path="/jsp/dantai/DntInfMskList.jsp" />
+        </action>
+        <action
+                scope="request"
+                path="/dantai/Inf/DntInfMskInfInitAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskInfInitAct">
+            <forward name="success" path="/jsp/dantai/DntInfMskInf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/dantai/Inf/DntInfMskInfAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskInfAct"
+                name="NullFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/dantai/DntInfMskUpdInp.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/dantai/Inf/DntInfMskUpdInpAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskUpdInpAct"
+                name="DntInfMskUpdFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/dantai/DntInfMskUpdConf.jsp" />
+            <forward name="back" path="/jsp/dantai/DntInfMskInf.jsp" />
+            <forward name="cancel" path="/jsp/dantai/DntInfMenu.jsp" />
+            <forward name="error" path="/jsp/dantai/DntInfMskUpdInp.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+        <action
+                path="/dantai/Inf/DntInfMskUpdConfAct"
+                type="jp.co.nii.miw.presentation.dantai.info.DntInfMskUpdConfAct"
+                name="DntInfMskUpdFrm"
+                scope="request"
+                validate="false">
+            <forward name="success" path="/jsp/dantai/DntInfMskUpdEnd.jsp" />
+            <forward name="back" path="/jsp/dantai/DntInfMskUpdInp.jsp" />
+            <forward name="error" path="/jsp/dantai/DntInfMskUpdConf.jsp" />
+            <forward name="session" path="/html/sys_errsession.html" />
+            <forward name="exception" path="/html/sys_err.html" />
+        </action>
+
+    </action-mappings>
+    
+<!--    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>-->
+
+    <message-resources parameter="ApplicationResource" />
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+<!--    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>-->
+    
+<!--     ========================= Validator plugin ================================= 
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>-->
+  
+</struts-config>
