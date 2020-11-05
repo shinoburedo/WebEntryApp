@@ -1,5 +1,5 @@
 # WebEntryApp
-Examination Appling System using Java, Struts
+Web Application System for examination using Java, Struts
 
 # Features
 
